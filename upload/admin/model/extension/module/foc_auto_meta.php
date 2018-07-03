@@ -51,7 +51,7 @@ class ModelExtensionModuleFocAutoMeta extends Model {
       return $this->defaultSettings();
     }
     else {
-      return $settings[self::SETTINGS_GROUP_KEY];
+      return array_replace_recursive($this->defaultSettings(), $settings[self::SETTINGS_GROUP_KEY]);
     }
   }
 

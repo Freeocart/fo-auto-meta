@@ -33,7 +33,7 @@
 
           <div class="tab-content">
             <?php foreach ($languages as $language) : ?>
-            <div class="tab-pane active" id="language<?php echo $language['language_id']; ?>">
+            <div class="tab-pane <?php if ($language['language_id'] == $language_id) : ?>active<?php endif; ?>" id="language<?php echo $language['language_id']; ?>">
               <div class="form-group">
                 <label class="control-label col-sm-2"><?php echo $labels['foc_auto_meta_product_title']; ?></label>
                 <div class="col-sm-10">
@@ -94,9 +94,8 @@
                 </div>
               </div>
             </div>
-          </div>
           <?php endforeach; ?>
-
+          </div>
         </form>
       </div>
     </div>

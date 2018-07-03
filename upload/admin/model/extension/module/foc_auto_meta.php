@@ -1,15 +1,19 @@
 <?php
 
 class ModelExtensionModuleFocAutoMeta extends Model {
-  private const SETTINGS_GROUP = 'foc_auto_meta';
+
+  const SETTINGS_GROUP = 'foc_auto_meta';
 
   public function defaultSettings () {
     return array(
       'product_title' => '',
+      'force_replace_product_title' => false,
       'product_description' => '',
+      'force_replace_product_description' => false,
       'category_title' => '',
+      'force_replace_category_title' => false,
       'category_description' => '',
-      'force_replace' => false
+      'force_replace_category_description' => false,
     );
   }
 

@@ -3,9 +3,10 @@
 class ControllerExtensionModuleFocAutoMeta extends Controller {
 
   public function __construct ($registry) {
+    $parentResult = parent::__construct($registry);
     $this->load->model('extension/module/foc_auto_meta');
 
-    return parent::__construct($registry);
+    return $parentResult;
   }
 
   public function install () {
@@ -32,12 +33,28 @@ class ControllerExtensionModuleFocAutoMeta extends Controller {
   public function index () {
     $data = array();
 
+    $validKeys = array_keys($this->model_extension_module_foc_auto_meta->defaultSettings());
+
+    $this->language->load('extension/module/foc_auto_meta');
+
+    $data['heading_title'] = $this->language->get('heading_title');
+    $data['breadcrumbs'] = $this->breadcrumbs();
+    $data['action'] = $this->createUrl('extension/module/foc_auto_meta');
+
     $data['fam_settings'] = $this->model_extension_module_foc_auto_meta->getSettings();
+
+    $data['language'] = array();
+
+    foreach ($validKeys as $key) {
+      $data['language'][$key] = $this->language->get('field_' . $key);
+    }
+
+    $data['language']['force_replace'] = $this->language->get('force_replace');
+
+    $data['button_save'] = $this->language->get('button_save');
 
     if ($this->request->server['REQUEST_METHOD'] == 'POST') {
       $post = $this->request->post;
-
-      $validKeys = array_keys($this->model_extension_module_foc_auto_meta->defaultSettings());
 
       foreach ($validKeys as $key) {
         if (isset($post[$key])) {

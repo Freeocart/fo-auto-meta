@@ -33,8 +33,9 @@ class ControllerExtensionModuleFocAutoMeta extends Controller {
   public function index () {
     $data = array();
 
-    $validKeys = array_keys($this->model_extension_module_foc_auto_meta->defaultSettings());
+    $validKeys = array_keys($this->model_extension_module_foc_auto_meta->defaultSettingsItem());
 
+    $this->load->model('localisation/language');
     $this->language->load('extension/module/foc_auto_meta');
 
     $data['heading_title'] = $this->language->get('heading_title');
@@ -43,22 +44,27 @@ class ControllerExtensionModuleFocAutoMeta extends Controller {
 
     $data['fam_settings'] = $this->model_extension_module_foc_auto_meta->getSettings();
 
-    $data['language'] = array();
+    $data['languages'] = $this->model_localisation_language->getLanguages();
+    $data['language_id'] = $this->config->get('config_language_id');
+
+    $data['labels'] = array();
 
     foreach ($validKeys as $key) {
-      $data['language'][$key] = $this->language->get('field_' . $key);
+      $data['labels'][$key] = $this->language->get('field_' . $key);
     }
 
-    $data['language']['force_replace'] = $this->language->get('force_replace');
+    $data['labels']['force_replace'] = $this->language->get('force_replace');
 
     $data['button_save'] = $this->language->get('button_save');
 
     if ($this->request->server['REQUEST_METHOD'] == 'POST') {
       $post = $this->request->post;
 
-      foreach ($validKeys as $key) {
-        if (isset($post[$key])) {
-          $data['fam_settings'][$key] = $post[$key];
+      if (isset($post['foc_auto_meta'])) {
+        foreach ($post['foc_auto_meta'] as $lang_id => $data) {
+          foreach ($data as $key => $value) {
+            $data['fam_settings'][$lang_id][$key] = $value;
+          }
         }
       }
 

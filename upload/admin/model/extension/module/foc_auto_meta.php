@@ -5,7 +5,7 @@ class ModelExtensionModuleFocAutoMeta extends Model {
   const SETTINGS_GROUP = 'foc_auto_meta';
   const SETTINGS_GROUP_KEY = 'foc_auto_meta_data';
 
-  public function defaultSettings () {
+  public function defaultSettingsItem () {
     return array(
       self::SETTINGS_GROUP . '_product_title' => '',
       self::SETTINGS_GROUP . '_force_replace_product_title' => false,
@@ -16,6 +16,19 @@ class ModelExtensionModuleFocAutoMeta extends Model {
       self::SETTINGS_GROUP . '_category_description' => '',
       self::SETTINGS_GROUP . '_force_replace_category_description' => false,
     );
+  }
+
+  public function defaultSettings () {
+    $default = array();
+    $this->load->model('localisation/language');
+
+    $languages = $this->model_localisation_language->getLanguages();
+
+    foreach ($languages as $language) {
+      $default[$language['language_id']] = $this->defaultSettingsItem();
+    }
+
+    return $default;
   }
 
   public function install () {

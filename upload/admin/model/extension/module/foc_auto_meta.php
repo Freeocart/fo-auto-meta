@@ -3,23 +3,26 @@
 class ModelExtensionModuleFocAutoMeta extends Model {
 
   const SETTINGS_GROUP = 'foc_auto_meta';
+  const SETTINGS_GROUP_KEY = 'foc_auto_meta_data';
 
   public function defaultSettings () {
     return array(
-      'product_title' => '',
-      'force_replace_product_title' => false,
-      'product_description' => '',
-      'force_replace_product_description' => false,
-      'category_title' => '',
-      'force_replace_category_title' => false,
-      'category_description' => '',
-      'force_replace_category_description' => false,
+      self::SETTINGS_GROUP . '_product_title' => '',
+      self::SETTINGS_GROUP . '_force_replace_product_title' => false,
+      self::SETTINGS_GROUP . '_product_description' => '',
+      self::SETTINGS_GROUP . '_force_replace_product_description' => false,
+      self::SETTINGS_GROUP . '_category_title' => '',
+      self::SETTINGS_GROUP . '_force_replace_category_title' => false,
+      self::SETTINGS_GROUP . '_category_description' => '',
+      self::SETTINGS_GROUP . '_force_replace_category_description' => false,
     );
   }
 
   public function install () {
     $this->load->model('setting/setting');
-    $this->model_setting_setting->editSetting(self::SETTINGS_GROUP, $this->defaultSettings());
+    $this->model_setting_setting->editSetting(self::SETTINGS_GROUP, array(
+      self::SETTINGS_GROUP_KEY => $this->defaultSettings()
+    ));
   }
 
   public function uninstall () {
@@ -29,18 +32,19 @@ class ModelExtensionModuleFocAutoMeta extends Model {
 
   public function getSettings () {
     $this->load->model('setting/setting');
-    $settings = $this->model_setting_setting->getSettingValue(self::SETTINGS_GROUP);
+    $settings = $this->model_setting_setting->getSetting(self::SETTINGS_GROUP);
 
-    if (is_null($settings)) {
-      $settings = $this->defaultSettings();
+    if (is_null($settings) || !isset($settings[self::SETTINGS_GROUP_KEY])) {
+      return $this->defaultSettings();
     }
-
-    return $settings;
+    else {
+      return $settings[self::SETTINGS_GROUP_KEY];
+    }
   }
 
   public function saveSettings ($settings) {
     $this->load->model('setting/setting');
     $settings = array_replace($this->defaultSettings(), $settings);
-    $this->model_setting_setting->editSetting(self::SETTINGS_GROUP, $settings);
+    $this->model_setting_setting->editSettingValue(self::SETTINGS_GROUP, self::SETTINGS_GROUP_KEY, $settings);
   }
 }

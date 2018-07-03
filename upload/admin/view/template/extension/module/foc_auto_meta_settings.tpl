@@ -24,62 +24,62 @@
         <form id="foc_auto_meta_form" class="form form-horizontal" action="<?php $action; ?>" method="POST">
 
           <div class="form-group">
-            <label class="control-label col-sm-2"><?php echo $language['product_title']; ?></label>
+            <label class="control-label col-sm-2"><?php echo $language['foc_auto_meta_product_title']; ?></label>
             <div class="col-sm-10">
-              <textarea name="field_product_title" rows="3" class="form-control"><?php echo $fam_settings['product_title']; ?></textarea>
+              <textarea name="foc_auto_meta_product_title" rows="3" class="form-control"><?php echo $fam_settings['foc_auto_meta_product_title']; ?></textarea>
             </div>
           </div>
 
           <div class="form-group">
             <label class="control-label col-sm-2"><?php echo $language['force_replace']; ?></label>
             <div class="col-sm-10">
-              <input type="hidden" value="0" name="force_replace_product_title">
-              <input type="checkbox" value="<?php echo $fam_settings['force_replace_product_title'] ?>" name="force_replace_product_title">
+              <input type="hidden" value="0" name="foc_auto_meta_force_replace_product_title">
+              <input type="checkbox" value="1" <?php if ($fam_settings['foc_auto_meta_force_replace_product_title']): ?>checked<?php endif;?> name="foc_auto_meta_force_replace_product_title">
             </div>
           </div>
 
           <div class="form-group">
-            <label class="control-label col-sm-2"><?php echo $language['product_description']; ?></label>
+            <label class="control-label col-sm-2"><?php echo $language['foc_auto_meta_product_description']; ?></label>
             <div class="col-sm-10">
-              <textarea name="field_product_description" rows="3" class="form-control"><?php echo $fam_settings['product_description']; ?></textarea>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="control-label col-sm-2"><?php echo $language['force_replace']; ?></label>
-            <div class="col-sm-10">
-              <input type="hidden" value="0" name="force_replace_product_description">
-              <input type="checkbox" value="<?php echo $fam_settings['force_replace_product_description'] ?>" name="force_replace_product_description">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="control-label col-sm-2"><?php echo $language['category_title']; ?></label>
-            <div class="col-sm-10">
-              <textarea name="field_category_title" rows="3" class="form-control"><?php echo $fam_settings['category_title']; ?></textarea>
+              <textarea name="foc_auto_meta_product_description" rows="3" class="form-control"><?php echo $fam_settings['foc_auto_meta_product_description']; ?></textarea>
             </div>
           </div>
 
           <div class="form-group">
             <label class="control-label col-sm-2"><?php echo $language['force_replace']; ?></label>
             <div class="col-sm-10">
-              <input type="hidden" value="0" name="force_replace_category_title">
-              <input type="checkbox" value="<?php echo $fam_settings['force_replace_category_title'] ?>" name="force_replace_category_title">
+              <input type="hidden" value="0" name="foc_auto_meta_force_replace_product_description">
+              <input type="checkbox" value="1" <?php if ($fam_settings['foc_auto_meta_force_replace_product_description']): ?>checked<?php endif;?> name="foc_auto_meta_force_replace_product_description">
             </div>
           </div>
 
           <div class="form-group">
-            <label class="control-label col-sm-2"><?php echo $language['category_description']; ?></label>
+            <label class="control-label col-sm-2"><?php echo $language['foc_auto_meta_category_title']; ?></label>
             <div class="col-sm-10">
-              <textarea name="field_category_description" rows="3" class="form-control"><?php echo $fam_settings['category_description']; ?></textarea>
+              <textarea name="foc_auto_meta_category_title" rows="3" class="form-control"><?php echo $fam_settings['foc_auto_meta_category_title']; ?></textarea>
             </div>
           </div>
 
           <div class="form-group">
             <label class="control-label col-sm-2"><?php echo $language['force_replace']; ?></label>
             <div class="col-sm-10">
-              <input type="hidden" value="0" name="force_replace_category_description">
-              <input type="checkbox" value="<?php echo $fam_settings['force_replace_category_description'] ?>" name="force_replace_category_description">
+              <input type="hidden" value="0" name="foc_auto_meta_force_replace_category_title">
+              <input type="checkbox" value="1" <?php if ($fam_settings['foc_auto_meta_force_replace_category_title']): ?>checked<?php endif;?> name="foc_auto_meta_force_replace_category_title">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2"><?php echo $language['foc_auto_meta_category_description']; ?></label>
+            <div class="col-sm-10">
+              <textarea name="foc_auto_meta_category_description" rows="3" class="form-control"><?php echo $fam_settings['foc_auto_meta_category_description']; ?></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2"><?php echo $language['force_replace']; ?></label>
+            <div class="col-sm-10">
+              <input type="hidden" value="0" name="foc_auto_meta_force_replace_category_description">
+              <input type="checkbox" value="1" <?php if ($fam_settings['foc_auto_meta_force_replace_category_description']): ?>checked<?php endif;?> name="foc_auto_meta_force_replace_category_description">
             </div>
           </div>
 

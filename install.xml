@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <name>foc_auto_meta</name>
+  <code>foc_auto_meta</code>
+  <version>2.1.0.0</version>
+  <author>ikenfin</author>
+  <link>http://freeocart.ru</link>
+
+  <file path="catalog/controller/product/product.php">
+    <operation>
+      <search><![CDATA[$this->model_catalog_product->updateViewed($this->request->get['product_id']);]]></search>
+      <add position="after"><![CDATA[
+        $this->load->model('extension/module/foc_auto_meta');
+        $this->model_extension_module_foc_auto_meta->processProductMeta($this->document, $product_info);
+      ]]></add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/product/category.php">
+    <operation>
+      <search><![CDATA[$data['limit'] = $limit;]]></search>
+      <add position="after"><![CDATA[
+        $this->load->model('extension/module/foc_auto_meta');
+        $this->model_extension_module_foc_auto_meta->processCategoryMeta($this->document, $category_info);
+      ]]></add>
+    </operation>
+  </file>
+</modification>

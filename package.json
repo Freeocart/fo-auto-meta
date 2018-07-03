@@ -1,0 +1,15 @@
+{
+  "name": "foc_auto_meta_bundle",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "gulp",
+    "pack": "bash pack.sh",
+    "test": "gulp test",
+    "build": "bash pack.sh"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}

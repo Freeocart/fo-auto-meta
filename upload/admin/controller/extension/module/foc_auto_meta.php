@@ -10,11 +10,28 @@ class ControllerExtensionModuleFocAutoMeta extends Controller {
   }
 
   public function install () {
+     // Remove unnecessary template version
+     $templatePath = DIR_APPLICATION . 'view/template/extension/module/';
+     $viewFile = 'foc_auto_meta_settings.twig';
+
+     if ($this->isOpencart3()) {
+       $viewFile = 'foc_auto_meta_settings.tpl';
+     }
+
+     if (is_file($templatePath . $viewFile)) {
+       unlink($templatePath . $viewFile);
+     }
+
     $this->model_extension_module_foc_auto_meta->install();
   }
 
   public function uninstall () {
     $this->model_extension_module_foc_auto_meta->uninstall();
+  }
+
+  private function isOpencart3 () {
+    $version_chars = explode('.', VERSION);
+    return (int)$version_chars[0] === 3;
   }
 
   private function getTokenParam () {

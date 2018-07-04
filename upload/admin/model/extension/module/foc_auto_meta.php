@@ -57,7 +57,7 @@ class ModelExtensionModuleFocAutoMeta extends Model {
 
   public function saveSettings ($settings) {
     $this->load->model('setting/setting');
-    $settings = array_replace($this->defaultSettings(), $settings);
+    $settings = array_replace_recursive($this->defaultSettings(), $settings);
     $this->model_setting_setting->editSettingValue(self::SETTINGS_GROUP, self::SETTINGS_GROUP_KEY, $settings);
   }
 }

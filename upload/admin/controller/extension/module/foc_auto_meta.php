@@ -76,10 +76,9 @@ class ControllerExtensionModuleFocAutoMeta extends Controller {
 
     if ($this->request->server['REQUEST_METHOD'] == 'POST') {
       $post = $this->request->post;
-
       if (isset($post['foc_auto_meta'])) {
-        foreach ($post['foc_auto_meta'] as $lang_id => $data) {
-          foreach ($data as $key => $value) {
+        foreach ($post['foc_auto_meta'] as $lang_id => $meta_data) {
+          foreach ($meta_data as $key => $value) {
             $data['fam_settings'][$lang_id][$key] = $value;
           }
         }

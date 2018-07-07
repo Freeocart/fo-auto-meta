@@ -60,7 +60,7 @@ class ModelExtensionModuleFocAutoMeta extends Model {
         || trim($document->getDescription()) == ''
         || $this->getByKey('force_replace_product_description')
     ) {
-      $document->setDescription($this->processTemplate('product_title', $product_info));
+      $document->setDescription($this->processTemplate('product_description', $product_info));
     }
   }
 
@@ -76,7 +76,7 @@ class ModelExtensionModuleFocAutoMeta extends Model {
         || trim($document->getDescription()) == ''
         || $this->getByKey('force_replace_category_description')
     ) {
-      $document->setDescription($this->processTemplate('category_title', $category_info));
+      $document->setDescription($this->processTemplate('category_description', $category_info));
     }
   }
 

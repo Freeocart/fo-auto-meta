@@ -1,11 +1,11 @@
 # FO Auto meta
 
-Создавайте кастомные мета заголовки и описания при помощи шаблонов!
+Create custom meta title/description with templates!
 
-### Как писать шаблоны
+### How to template
 
-Модуль использует только простую интерполяцию - используйте `{{ name }}`, для вывода значений полей из соответствующих объектов - `product_info` или `category_info`. Смотрите код моделей `product` и `category` чтобы узнать все возможные поля этих объектов.
+Module uses just a simple interpolation - use `{{ name }}`, module will replace these tokens to `product_info` or `category_info` value. For more info about these variables, check opencart models - `product` and `category`.
 
-### Принудительно заменять мета поля
+### Force replace all meta
 
-По умолчанию модуль не трогает мета поля если они были заполнены, но у каждого шаблона есть переключатель для принудительной замены. Если вам нужно заменить все заполненные мета поля на шаблонные - используйте эти переключатели.
+By default, module do not replace meta fields, if they were filled before, but every template has an option to force replace meta value. So if you want to use only templated meta - use these checkboxes.

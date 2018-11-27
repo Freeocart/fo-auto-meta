@@ -6,6 +6,76 @@
   <author>ikenfin</author>
   <link>http://freeocart.ru</link>
 
+  <file path="catalog/controller/account/voucher.php">
+    <operation>
+      <search><![CDATA[$this->document->setTitle($this->language->get('heading_title'));]]></search>
+      <add position="after"><![CDATA[
+        $this->load->model('extension/module/foc_auto_meta');
+        $this->model_extension_module_foc_auto_meta->processMetaByKey('voucher', $this->document);
+      ]]></add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/module/faq.php">
+    <operation>
+      <search><![CDATA[$this->document->setTitle($data['heading_title']);]]></search>
+      <add position="after"><![CDATA[
+        $this->load->model('extension/module/foc_auto_meta');
+        $this->model_extension_module_foc_auto_meta->processMetaByKey('faq', $this->document);
+      ]]></add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/product/special.php">
+    <operation>
+      <search><![CDATA[$this->document->setTitle($this->language->get('heading_title'));]]></search>
+      <add position="after"><![CDATA[
+        $this->load->model('extension/module/foc_auto_meta');
+        $this->model_extension_module_foc_auto_meta->processMetaByKey('products_special', $this->document);
+      ]]></add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/information/sitemap.php">
+    <operation>
+      <search><![CDATA[$this->document->setTitle($this->language->get('heading_title'));]]></search>
+      <add position="after"><![CDATA[
+        $this->load->model('extension/module/foc_auto_meta');
+        $this->model_extension_module_foc_auto_meta->processMetaByKey('sitemap', $this->document);
+      ]]></add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/information/shop_rating.php">
+    <operation>
+      <search><![CDATA[$this->document->setTitle($this->language->get('heading_title'));]]></search>
+      <add position="after"><![CDATA[
+        $this->load->model('extension/module/foc_auto_meta');
+        $this->model_extension_module_foc_auto_meta->processMetaByKey('reviews', $this->document);
+      ]]></add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/product/manufacturer.php">
+    <operation>
+      <search><![CDATA[$this->document->setTitle($this->language->get('heading_title'));]]></search>
+      <add position="after"><![CDATA[
+        $this->load->model('extension/module/foc_auto_meta');
+        $this->model_extension_module_foc_auto_meta->processMetaByKey('manufacturer', $this->document);
+      ]]></add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/information/contact.php">
+    <operation>
+      <search><![CDATA[$this->document->setTitle($this->language->get('heading_title'));]]></search>
+      <add position="after"><![CDATA[
+        $this->load->model('extension/module/foc_auto_meta');
+        $this->model_extension_module_foc_auto_meta->processMetaByKey('contacts_page', $this->document);
+      ]]></add>
+    </operation>
+  </file>
+
   <file path="catalog/controller/product/product.php">
     <operation>
       <search><![CDATA[$this->model_catalog_product->updateViewed($this->request->get['product_id']);]]></search>

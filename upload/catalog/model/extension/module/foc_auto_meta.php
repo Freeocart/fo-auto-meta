@@ -48,6 +48,18 @@ class ModelExtensionModuleFocAutoMeta extends Model {
     return $result;
   }
 
+  public function processMetaByKey ($key, $document) {
+    $newTitle = $this->processTemplate($key . '_title', array());
+    $newDescription = $this->processTemplate($key . '_description', array());
+
+    if (trim($newTitle) != '') {
+      $document->setTitle($newTitle);
+    }
+    if (trim($newDescription) != '') {
+      $document->setDescription($newDescription);
+    }
+  }
+
   public function processProductMeta ($document, $product_info) {
     if (!$document->getTitle()
         || trim($document->getTitle()) == ''

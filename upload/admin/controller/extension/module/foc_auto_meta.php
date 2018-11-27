@@ -64,6 +64,8 @@ class ControllerExtensionModuleFocAutoMeta extends Controller {
     $data['languages'] = $this->model_localisation_language->getLanguages();
     $data['language_id'] = $this->config->get('config_language_id');
 
+    $data['label_additional'] = $this->language->get('label_additional');
+
     $data['labels'] = array();
 
     foreach ($validKeys as $key) {

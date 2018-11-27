@@ -93,6 +93,117 @@
                   <input type="checkbox" value="1" <?php if ($fam_settings[$language['language_id']]['foc_auto_meta_force_replace_category_description']): ?>checked<?php endif;?>  name="foc_auto_meta[<?php echo $language['language_id']; ?>][foc_auto_meta_force_replace_category_description]">
                 </div>
               </div>
+
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <h4><?php echo $label_additional; ?></h4>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2"><?php echo $labels['foc_auto_meta_contacts_page_title']; ?></label>
+                <div class="col-sm-10">
+                  <textarea name="foc_auto_meta[<?php echo $language['language_id']; ?>][foc_auto_meta_contacts_page_title]" rows="3" class="form-control"><?php echo $fam_settings[$language['language_id']]['foc_auto_meta_contacts_page_title']; ?></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2"><?php echo $labels['foc_auto_meta_contacts_page_description']; ?></label>
+                <div class="col-sm-10">
+                  <textarea name="foc_auto_meta[<?php echo $language['language_id']; ?>][foc_auto_meta_contacts_page_description]" rows="3" class="form-control"><?php echo $fam_settings[$language['language_id']]['foc_auto_meta_contacts_page_description']; ?></textarea>
+                </div>
+              </div>
+
+              <!-- shop reviews page -->
+              <div class="form-group">
+                <label class="control-label col-sm-2"><?php echo $labels['foc_auto_meta_reviews_title']; ?></label>
+                <div class="col-sm-10">
+                  <textarea name="foc_auto_meta[<?php echo $language['language_id']; ?>][foc_auto_meta_reviews_title]" rows="3" class="form-control"><?php echo $fam_settings[$language['language_id']]['foc_auto_meta_reviews_title']; ?></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2"><?php echo $labels['foc_auto_meta_reviews_description']; ?></label>
+                <div class="col-sm-10">
+                  <textarea name="foc_auto_meta[<?php echo $language['language_id']; ?>][foc_auto_meta_reviews_description]" rows="3" class="form-control"><?php echo $fam_settings[$language['language_id']]['foc_auto_meta_reviews_description']; ?></textarea>
+                </div>
+              </div>
+
+              <!-- sitemap html -->
+              <div class="form-group">
+                <label class="control-label col-sm-2"><?php echo $labels['foc_auto_meta_sitemap_title']; ?></label>
+                <div class="col-sm-10">
+                  <textarea name="foc_auto_meta[<?php echo $language['language_id']; ?>][foc_auto_meta_sitemap_title]" rows="3" class="form-control"><?php echo $fam_settings[$language['language_id']]['foc_auto_meta_sitemap_title']; ?></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2"><?php echo $labels['foc_auto_meta_sitemap_description']; ?></label>
+                <div class="col-sm-10">
+                  <textarea name="foc_auto_meta[<?php echo $language['language_id']; ?>][foc_auto_meta_sitemap_description]" rows="3" class="form-control"><?php echo $fam_settings[$language['language_id']]['foc_auto_meta_sitemap_description']; ?></textarea>
+                </div>
+              </div>
+
+              <!-- products_special -->
+              <div class="form-group">
+                <label class="control-label col-sm-2"><?php echo $labels['foc_auto_meta_products_special_title']; ?></label>
+                <div class="col-sm-10">
+                  <textarea name="foc_auto_meta[<?php echo $language['language_id']; ?>][foc_auto_meta_products_special_title]" rows="3" class="form-control"><?php echo $fam_settings[$language['language_id']]['foc_auto_meta_products_special_title']; ?></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2"><?php echo $labels['foc_auto_meta_products_special_description']; ?></label>
+                <div class="col-sm-10">
+                  <textarea name="foc_auto_meta[<?php echo $language['language_id']; ?>][foc_auto_meta_products_special_description]" rows="3" class="form-control"><?php echo $fam_settings[$language['language_id']]['foc_auto_meta_products_special_description']; ?></textarea>
+                </div>
+              </div>
+
+              <!-- faq module -->
+              <div class="form-group">
+                <label class="control-label col-sm-2"><?php echo $labels['foc_auto_meta_faq_title']; ?></label>
+                <div class="col-sm-10">
+                  <textarea name="foc_auto_meta[<?php echo $language['language_id']; ?>][foc_auto_meta_faq_title]" rows="3" class="form-control"><?php echo $fam_settings[$language['language_id']]['foc_auto_meta_faq_title']; ?></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2"><?php echo $labels['foc_auto_meta_faq_description']; ?></label>
+                <div class="col-sm-10">
+                  <textarea name="foc_auto_meta[<?php echo $language['language_id']; ?>][foc_auto_meta_faq_description]" rows="3" class="form-control"><?php echo $fam_settings[$language['language_id']]['foc_auto_meta_faq_description']; ?></textarea>
+                </div>
+              </div>
+
+              <!-- voucher -->
+              <div class="form-group">
+                <label class="control-label col-sm-2"><?php echo $labels['foc_auto_meta_voucher_title']; ?></label>
+                <div class="col-sm-10">
+                  <textarea name="foc_auto_meta[<?php echo $language['language_id']; ?>][foc_auto_meta_voucher_title]" rows="3" class="form-control"><?php echo $fam_settings[$language['language_id']]['foc_auto_meta_voucher_title']; ?></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2"><?php echo $labels['foc_auto_meta_voucher_description']; ?></label>
+                <div class="col-sm-10">
+                  <textarea name="foc_auto_meta[<?php echo $language['language_id']; ?>][foc_auto_meta_voucher_description]" rows="3" class="form-control"><?php echo $fam_settings[$language['language_id']]['foc_auto_meta_voucher_description']; ?></textarea>
+                </div>
+              </div>
+
+              <!-- manufacturer -->
+              <div class="form-group">
+                <label class="control-label col-sm-2"><?php echo $labels['foc_auto_meta_manufacturer_title']; ?></label>
+                <div class="col-sm-10">
+                  <textarea name="foc_auto_meta[<?php echo $language['language_id']; ?>][foc_auto_meta_manufacturer_title]" rows="3" class="form-control"><?php echo $fam_settings[$language['language_id']]['foc_auto_meta_manufacturer_title']; ?></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2"><?php echo $labels['foc_auto_meta_manufacturer_description']; ?></label>
+                <div class="col-sm-10">
+                  <textarea name="foc_auto_meta[<?php echo $language['language_id']; ?>][foc_auto_meta_manufacturer_description]" rows="3" class="form-control"><?php echo $fam_settings[$language['language_id']]['foc_auto_meta_manufacturer_description']; ?></textarea>
+                </div>
+              </div>
+
             </div>
           <?php endforeach; ?>
           </div>

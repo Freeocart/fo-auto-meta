@@ -15,6 +15,21 @@ class ModelExtensionModuleFocAutoMeta extends Model {
       self::SETTINGS_GROUP . '_force_replace_category_title' => false,
       self::SETTINGS_GROUP . '_category_description' => '',
       self::SETTINGS_GROUP . '_force_replace_category_description' => false,
+      // customize seo metatags on non-editable pages
+      self::SETTINGS_GROUP . '_contacts_page_title' => '',
+      self::SETTINGS_GROUP . '_contacts_page_description' => '',
+      self::SETTINGS_GROUP . '_manufacturer_title' => '',
+      self::SETTINGS_GROUP . '_manufacturer_description' => '',
+      self::SETTINGS_GROUP . '_reviews_title' => '',
+      self::SETTINGS_GROUP . '_reviews_description' => '',
+      self::SETTINGS_GROUP . '_sitemap_title' => '',
+      self::SETTINGS_GROUP . '_sitemap_description' => '',
+      self::SETTINGS_GROUP . '_products_special_title' => '',
+      self::SETTINGS_GROUP . '_products_special_description' => '',
+      self::SETTINGS_GROUP . '_voucher_title' => '',
+      self::SETTINGS_GROUP . '_voucher_description' => '',
+      self::SETTINGS_GROUP . '_faq_title' => '',
+      self::SETTINGS_GROUP . '_faq_description' => ''
     );
   }
 

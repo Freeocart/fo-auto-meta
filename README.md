@@ -47,4 +47,4 @@ By default, module do not replace meta fields, if they were filled before, but e
 
 With this module you also can change title/description of some default opencart pages, such as contacts, voucher, sitemap, shop rating, product special.
 
-Also module can change title/description for faq pages, produced by (FAQ module)[https://opencart2x.ru/moduli/vid/faq-accordion]
+Also module can change title/description for faq pages, produced by [FAQ module](https://opencart2x.ru/moduli/vid/faq-accordion)

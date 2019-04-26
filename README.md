@@ -4,7 +4,41 @@ Create custom meta title/description with templates!
 
 ### How to template
 
-Module uses just a simple interpolation - use `{{ name }}`, module will replace these tokens to `product_info` or `category_info` value. For more info about these variables, check opencart models - `product` and `category`.
+Module uses just a simple interpolation for **product** and **category** pages - use `{{ name }}`, module will replace these tokens to `product_info` or `category_info` value.
+
+**Product related variables:**
+
+|variable|description|
+|:---:|:---:|
+|name|Product name|
+|description|Product description (html)|
+|meta_title|Meta title|
+|meta_description|Meta description|
+|meta_keyword|Meta keyword|
+|tag|Product tags|
+|model|Model|
+|sku, upc, ean, jan, isbn, mpn||
+|location|Location field value|
+|quantity|Quantity|
+|stock_status|Stock status|
+|manufacturer|Manufacturer|
+|price|Product price|
+|special|Product special price (if not set - empty)|
+|weight, length, width, height||
+|rating|Product rating|
+|reviews|Product reviews count|
+|viewed|Product views count|
+
+**Category related variables:**
+
+|variable|description|
+|:---:|:---:|
+|name|Category name|
+|description|Category description|
+|meta_title|Category meta title|
+|meta_description|Category meta description|
+|meta_keyword|Category meta keywords|
+
 
 ### Force replace all meta
 

@@ -16,15 +16,14 @@ Module uses just a simple interpolation for **product** and **category** pages -
 |meta_description|Meta description|
 |meta_keyword|Meta keyword|
 |tag|Product tags|
-|model|Model|
-|sku, upc, ean, jan, isbn, mpn||
+|model, sku, upc, ean, jan, isbn, mpn|Relevant product fields|
 |location|Location field value|
 |quantity|Quantity|
 |stock_status|Stock status|
 |manufacturer|Manufacturer|
 |price|Product price|
 |special|Product special price (if not set - empty)|
-|weight, length, width, height||
+|weight, length, width, height|Relevant product fields|
 |rating|Product rating|
 |reviews|Product reviews count|
 |viewed|Product views count|

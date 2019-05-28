@@ -105,4 +105,14 @@
       ]]></add>
     </operation>
   </file>
+
+  <file path="catalog/controller/common/home.php">
+    <operation>
+      <search><![CDATA[$data['column_left'] = $this->load->controller('common/column_left');]]></search>
+      <add position="before"><![CDATA[
+      $this->load->model('extension/module/foc_auto_meta');
+      $this->model_extension_module_foc_auto_meta->processMetaByKey('home', $this->document);
+      ]]></add>
+    </operation>
+  </file>
 </modification>

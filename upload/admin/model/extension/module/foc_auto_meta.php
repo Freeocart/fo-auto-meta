@@ -7,6 +7,10 @@ class ModelExtensionModuleFocAutoMeta extends Model {
 
   public function defaultSettingsItem () {
     return array(
+      self::SETTINGS_GROUP . '_home_title' => '',
+      self::SETTINGS_GROUP . '_force_replace_home_title' => false,
+      self::SETTINGS_GROUP . '_home_description' => '',
+      self::SETTINGS_GROUP . '_force_replace_home_description' => false,
       self::SETTINGS_GROUP . '_product_title' => '',
       self::SETTINGS_GROUP . '_force_replace_product_title' => false,
       self::SETTINGS_GROUP . '_product_description' => '',

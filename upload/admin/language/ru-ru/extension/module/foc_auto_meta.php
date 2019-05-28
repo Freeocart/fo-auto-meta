@@ -8,6 +8,11 @@ $_['text_module'] = 'Модули';
 $_['label_additional'] = 'Дополнительно';
 
 // поля
+$_['field_foc_auto_meta_home_title'] = 'Шаблон заголовка главной';
+$_['field_foc_auto_meta_home_description'] = 'Шаблон описания главной';
+
+$_['field_foc_auto_meta_category_title'] = 'Шаблон заголовка категории';
+$_['field_foc_auto_meta_category_description'] = 'Шаблон описания категории';
 $_['field_foc_auto_meta_product_title'] = 'Шаблон заголовка продукта';
 $_['field_foc_auto_meta_product_description'] = 'Шаблон описания продукта';
 $_['field_foc_auto_meta_category_title'] = 'Шаблон заголовка категории';

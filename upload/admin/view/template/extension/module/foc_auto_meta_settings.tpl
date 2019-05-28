@@ -34,6 +34,22 @@
           <div class="tab-content">
             <?php foreach ($languages as $language) : ?>
             <div class="tab-pane <?php if ($language['language_id'] == $language_id) : ?>active<?php endif; ?>" id="language<?php echo $language['language_id']; ?>">
+
+              <div class="form-group">
+                <label class="control-label col-sm-2"><?php echo $labels['foc_auto_meta_home_title'] ?></label>
+                <div class="col-sm-10">
+                  <textarea name="foc_auto_meta[<?php echo $language['language_id'] ?>][foc_auto_meta_home_title]" rows="3" class="form-control"><?php echo $fam_settings[$language['language_id']]['foc_auto_meta_home_title'] ?></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2"><?php echo $labels['foc_auto_meta_home_description'] ?></label>
+                <div class="col-sm-10">
+                  <textarea name="foc_auto_meta[<?php echo $language['language_id'] ?>][foc_auto_meta_home_description]" rows="3" class="form-control"><?php echo $fam_settings[$language['language_id']]['foc_auto_meta_home_description'] ?></textarea>
+                </div>
+              </div>
+
+
               <div class="form-group">
                 <label class="control-label col-sm-2"><?php echo $labels['foc_auto_meta_product_title']; ?></label>
                 <div class="col-sm-10">
@@ -91,6 +107,37 @@
                 <div class="col-sm-10">
                   <input type="hidden" value="0" name="foc_auto_meta[<?php echo $language['language_id']; ?>][foc_auto_meta_force_replace_category_description]">
                   <input type="checkbox" value="1" <?php if ($fam_settings[$language['language_id']]['foc_auto_meta_force_replace_category_description']): ?>checked<?php endif;?>  name="foc_auto_meta[<?php echo $language['language_id']; ?>][foc_auto_meta_force_replace_category_description]">
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <label class="control-label col-sm-2"><?php echo $labels['foc_auto_meta_information_title'] ?></label>
+                <div class="col-sm-10">
+                  <textarea name="foc_auto_meta[<?php echo $language['language_id'] ?>][foc_auto_meta_information_title]" rows="3" class="form-control"><?php echo $fam_settings[$language['language_id']]['foc_auto_meta_information_title'] ?></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2"><?php echo $labels['force_replace'] ?></label>
+                <div class="col-sm-10">
+                  <input type="hidden" value="0" name="foc_auto_meta[<?php echo $language['language_id'] ?>][foc_auto_meta_force_replace_information_title]">
+                  <input type="checkbox" value="1" <?php if ($fam_settings[$language['language_id']]['foc_auto_meta_force_replace_information_title']) : ?>checked<?php endif ?> name="foc_auto_meta[<?php echo $language['language_id'] ?>][foc_auto_meta_force_replace_information_title]">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2"><?php echo $labels['foc_auto_meta_information_description'] ?></label>
+                <div class="col-sm-10">
+                  <textarea name="foc_auto_meta[<?php echo $language['language_id'] ?>][foc_auto_meta_information_description]" rows="3" class="form-control"><?php echo $fam_settings[$language['language_id']]['foc_auto_meta_information_description'] ?></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2"><?php echo $labels['force_replace'] ?></label>
+                <div class="col-sm-10">
+                  <input type="hidden" value="0" name="foc_auto_meta[<?php echo $language['language_id'] ?>][foc_auto_meta_force_replace_information_description]">
+                  <input type="checkbox" value="1" <?php if ($fam_settings[$language['language_id']]['foc_auto_meta_force_replace_information_description']) : ?>checked<?php endif ?> name="foc_auto_meta[<?php echo $language['language_id'] ?>][foc_auto_meta_force_replace_information_description]">
                 </div>
               </div>
 

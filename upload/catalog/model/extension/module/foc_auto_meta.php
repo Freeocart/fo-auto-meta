@@ -92,4 +92,20 @@ class ModelExtensionModuleFocAutoMeta extends Model {
     }
   }
 
+  public function processInformationMeta ($document, $information_info) {
+    if (!$document->getTitle()
+        || trim($document->getTitle()) == ''
+        || $this->getByKey('force_replace_information_title')
+    ) {
+      $document->setTitle($this->processTemplate('information_title', $information_info));
+    }
+
+    if (!$document->getDescription()
+        || trim($document->getDescription()) == ''
+        || $this->getByKey('force_replace_information_description')
+    ) {
+      $document->setDescription($this->processTemplate('information_description', $information_info));
+    }
+  }
+
 }

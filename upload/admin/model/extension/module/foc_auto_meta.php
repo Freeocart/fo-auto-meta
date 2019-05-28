@@ -15,6 +15,10 @@ class ModelExtensionModuleFocAutoMeta extends Model {
       self::SETTINGS_GROUP . '_force_replace_category_title' => false,
       self::SETTINGS_GROUP . '_category_description' => '',
       self::SETTINGS_GROUP . '_force_replace_category_description' => false,
+      self::SETTINGS_GROUP . '_information_title' => '',
+      self::SETTINGS_GROUP . '_force_replace_information_title' => false,
+      self::SETTINGS_GROUP . '_information_description' => '',
+      self::SETTINGS_GROUP . '_force_replace_information_description' => false,
       // customize seo metatags on non-editable pages
       self::SETTINGS_GROUP . '_contacts_page_title' => '',
       self::SETTINGS_GROUP . '_contacts_page_description' => '',

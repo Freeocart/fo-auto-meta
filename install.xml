@@ -95,4 +95,14 @@
       ]]></add>
     </operation>
   </file>
+
+  <file path="catalog/controller/information/information.php">
+    <operation>
+      <search><![CDATA[$this->document->setKeywords($information_info['meta_keyword']);]]></search>
+      <add position="after"><![CDATA[
+      $this->load->model('extension/module/foc_auto_meta');
+      $this->model_extension_module_foc_auto_meta->processInformationMeta($this->document, $information_info);
+      ]]></add>
+    </operation>
+  </file>
 </modification>

@@ -60,51 +60,19 @@ class ModelExtensionModuleFocAutoMeta extends Model {
     }
   }
 
-  public function processProductMeta ($document, $product_info) {
+  public function processMetaTemplate ($key, $data, $document) {
     if (!$document->getTitle()
         || trim($document->getTitle()) == ''
-        || $this->getByKey('force_replace_product_title')
+        || $this->getByKey('force_replace_' . $key . '_title')
     ) {
-      $document->setTitle($this->processTemplate('product_title', $product_info));
+      $document->setTitle($this->processTemplate($key . '_title', $data));
     }
 
     if (!$document->getDescription()
         || trim($document->getDescription()) == ''
-        || $this->getByKey('force_replace_product_description')
+        || $this->getByKey('force_replace_' . $key . '_description')
     ) {
-      $document->setDescription($this->processTemplate('product_description', $product_info));
-    }
-  }
-
-  public function processCategoryMeta ($document, $category_info) {
-    if (!$document->getTitle()
-        || trim($document->getTitle()) == ''
-        || $this->getByKey('force_replace_category_title')
-    ) {
-      $document->setTitle($this->processTemplate('category_title', $category_info));
-    }
-
-    if (!$document->getDescription()
-        || trim($document->getDescription()) == ''
-        || $this->getByKey('force_replace_category_description')
-    ) {
-      $document->setDescription($this->processTemplate('category_description', $category_info));
-    }
-  }
-
-  public function processInformationMeta ($document, $information_info) {
-    if (!$document->getTitle()
-        || trim($document->getTitle()) == ''
-        || $this->getByKey('force_replace_information_title')
-    ) {
-      $document->setTitle($this->processTemplate('information_title', $information_info));
-    }
-
-    if (!$document->getDescription()
-        || trim($document->getDescription()) == ''
-        || $this->getByKey('force_replace_information_description')
-    ) {
-      $document->setDescription($this->processTemplate('information_description', $information_info));
+      $document->setDescription($this->processTemplate($key . '_description', $data));
     }
   }
 

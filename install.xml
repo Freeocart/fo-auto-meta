@@ -6,6 +6,64 @@
   <author>ikenfin</author>
   <link>http://freeocart.ru</link>
 
+  <!-- home page -->
+  <file path="catalog/controller/common/home.php">
+    <operation>
+      <search><![CDATA[$data['column_left'] = $this->load->controller('common/column_left');]]></search>
+      <add position="before"><![CDATA[
+      $this->load->model('extension/module/foc_auto_meta');
+      $this->model_extension_module_foc_auto_meta->processMetaByKey('home', $this->document);
+      ]]></add>
+    </operation>
+  </file>
+  <!-- product -->
+  <file path="catalog/controller/product/product.php">
+    <operation>
+      <search><![CDATA[$this->model_catalog_product->updateViewed($this->request->get['product_id']);]]></search>
+      <add position="after"><![CDATA[
+        $this->load->model('extension/module/foc_auto_meta');
+        $this->model_extension_module_foc_auto_meta->processMetaTemplate('product', $product_info, $this->document);
+      ]]></add>
+    </operation>
+  </file>
+  <!-- category -->
+  <file path="catalog/controller/product/category.php">
+    <operation>
+      <search><![CDATA[$data['limit'] = $limit;]]></search>
+      <add position="after"><![CDATA[
+        $this->load->model('extension/module/foc_auto_meta');
+        $this->model_extension_module_foc_auto_meta->processMetaTemplate('category', $category_info, $this->document);
+      ]]></add>
+    </operation>
+  </file>
+  <!-- information -->
+  <file path="catalog/controller/information/information.php">
+    <operation>
+      <search><![CDATA[$this->document->setKeywords($information_info['meta_keyword']);]]></search>
+      <add position="after"><![CDATA[
+      $this->load->model('extension/module/foc_auto_meta');
+      $this->model_extension_module_foc_auto_meta->processMetaTemplate('information', $information_info, $this->document);
+      ]]></add>
+    </operation>
+  </file>
+  <!-- manufacturer page -->
+  <file path="catalog/controller/product/manufacturer.php">
+    <operation>
+      <search><![CDATA[$this->document->setTitle($this->language->get('heading_title'));]]></search>
+      <add position="after"><![CDATA[
+        $this->load->model('extension/module/foc_auto_meta');
+        $this->model_extension_module_foc_auto_meta->processMetaByKey('manufacturer', $this->document);
+      ]]></add>
+    </operation>
+    <operation>
+      <search><![CDATA[$this->document->setTitle($manufacturer_info['name']);]]></search>
+      <add position="after"><![CDATA[
+        $this->load->model('extension/module/foc_auto_meta');
+        $this->model_extension_module_foc_auto_meta->processMetaTemplate('brand', $manufacturer_info, $this->document);
+      ]]></add>
+    </operation>
+  </file>
+  <!-- voucher page -->
   <file path="catalog/controller/account/voucher.php">
     <operation>
       <search><![CDATA[$this->document->setTitle($this->language->get('heading_title'));]]></search>
@@ -15,17 +73,7 @@
       ]]></add>
     </operation>
   </file>
-
-  <file path="catalog/controller/module/faq.php">
-    <operation>
-      <search><![CDATA[$this->document->setTitle($data['heading_title']);]]></search>
-      <add position="after"><![CDATA[
-        $this->load->model('extension/module/foc_auto_meta');
-        $this->model_extension_module_foc_auto_meta->processMetaByKey('faq', $this->document);
-      ]]></add>
-    </operation>
-  </file>
-
+  <!-- specials page -->
   <file path="catalog/controller/product/special.php">
     <operation>
       <search><![CDATA[$this->document->setTitle($this->language->get('heading_title'));]]></search>
@@ -35,7 +83,7 @@
       ]]></add>
     </operation>
   </file>
-
+  <!-- sitemap page -->
   <file path="catalog/controller/information/sitemap.php">
     <operation>
       <search><![CDATA[$this->document->setTitle($this->language->get('heading_title'));]]></search>
@@ -45,27 +93,7 @@
       ]]></add>
     </operation>
   </file>
-
-  <file path="catalog/controller/information/shop_rating.php">
-    <operation>
-      <search><![CDATA[$this->document->setTitle($this->language->get('heading_title'));]]></search>
-      <add position="after"><![CDATA[
-        $this->load->model('extension/module/foc_auto_meta');
-        $this->model_extension_module_foc_auto_meta->processMetaByKey('reviews', $this->document);
-      ]]></add>
-    </operation>
-  </file>
-
-  <file path="catalog/controller/product/manufacturer.php">
-    <operation>
-      <search><![CDATA[$this->document->setTitle($this->language->get('heading_title'));]]></search>
-      <add position="after"><![CDATA[
-        $this->load->model('extension/module/foc_auto_meta');
-        $this->model_extension_module_foc_auto_meta->processMetaByKey('manufacturer', $this->document);
-      ]]></add>
-    </operation>
-  </file>
-
+  <!-- contacts page -->
   <file path="catalog/controller/information/contact.php">
     <operation>
       <search><![CDATA[$this->document->setTitle($this->language->get('heading_title'));]]></search>
@@ -75,43 +103,24 @@
       ]]></add>
     </operation>
   </file>
-
-  <file path="catalog/controller/product/product.php">
+  <!-- modules settings -->
+  <!-- faq module page -->
+  <file path="catalog/controller/module/faq.php">
     <operation>
-      <search><![CDATA[$this->model_catalog_product->updateViewed($this->request->get['product_id']);]]></search>
+      <search><![CDATA[$this->document->setTitle($data['heading_title']);]]></search>
       <add position="after"><![CDATA[
         $this->load->model('extension/module/foc_auto_meta');
-        $this->model_extension_module_foc_auto_meta->processProductMeta($this->document, $product_info);
+        $this->model_extension_module_foc_auto_meta->processMetaByKey('faq', $this->document);
       ]]></add>
     </operation>
   </file>
-
-  <file path="catalog/controller/product/category.php">
+  <!-- shop rating -->
+  <file path="catalog/controller/information/shop_rating.php">
     <operation>
-      <search><![CDATA[$data['limit'] = $limit;]]></search>
+      <search><![CDATA[$this->document->setTitle($this->language->get('heading_title'));]]></search>
       <add position="after"><![CDATA[
         $this->load->model('extension/module/foc_auto_meta');
-        $this->model_extension_module_foc_auto_meta->processCategoryMeta($this->document, $category_info);
-      ]]></add>
-    </operation>
-  </file>
-
-  <file path="catalog/controller/information/information.php">
-    <operation>
-      <search><![CDATA[$this->document->setKeywords($information_info['meta_keyword']);]]></search>
-      <add position="after"><![CDATA[
-      $this->load->model('extension/module/foc_auto_meta');
-      $this->model_extension_module_foc_auto_meta->processInformationMeta($this->document, $information_info);
-      ]]></add>
-    </operation>
-  </file>
-
-  <file path="catalog/controller/common/home.php">
-    <operation>
-      <search><![CDATA[$data['column_left'] = $this->load->controller('common/column_left');]]></search>
-      <add position="before"><![CDATA[
-      $this->load->model('extension/module/foc_auto_meta');
-      $this->model_extension_module_foc_auto_meta->processMetaByKey('home', $this->document);
+        $this->model_extension_module_foc_auto_meta->processMetaByKey('reviews', $this->document);
       ]]></add>
     </operation>
   </file>

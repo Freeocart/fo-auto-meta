@@ -13,12 +13,19 @@ $_['field_foc_auto_meta_home_description'] = 'Шаблон описания гл
 
 $_['field_foc_auto_meta_category_title'] = 'Шаблон заголовка категории';
 $_['field_foc_auto_meta_category_description'] = 'Шаблон описания категории';
+
 $_['field_foc_auto_meta_product_title'] = 'Шаблон заголовка продукта';
 $_['field_foc_auto_meta_product_description'] = 'Шаблон описания продукта';
+
 $_['field_foc_auto_meta_category_title'] = 'Шаблон заголовка категории';
 $_['field_foc_auto_meta_category_description'] = 'Шаблон описания категории';
+
 $_['field_foc_auto_meta_information_title'] = 'Шаблон заголовка статьи';
 $_['field_foc_auto_meta_information_description'] = 'Шаблон описания статьи';
+
+$_['field_foc_auto_meta_brand_title'] = 'Шаблон заголовка производителя';
+$_['field_foc_auto_meta_brand_description'] = 'Шаблон описания производителя';
+
 $_['force_replace'] = 'Установить принудительно';
 
 // additional
